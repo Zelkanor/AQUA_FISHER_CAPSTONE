@@ -128,6 +128,7 @@ When multiple GPS points or spatial samples exist:
 - discuss inflow/outflow influence
 - identify shoreline or urban pressure zones
 - connect abnormal readings to land-use patterns if scientifically plausible
+- Ensure that ANY spatial_heatmap coordinate points returned are STRICTLY derived from the survey measurements and fall within the bounds of the actual water body (no points on landmasses).
 
 When timestamps or time windows exist:
 
@@ -218,6 +219,18 @@ The JSON MUST EXACTLY follow this structure:
     "biodiversity_impact": "string",
     "algal_bloom_risk": "Low | Moderate | High | Active"
   },
+  "spatial_heatmap": [
+    {
+      "latitude": number,
+      "longitude": number,
+      "parameter": "string",
+      "value": number,
+      "unit": "string",
+      "status": "Caution | Critical | Normal",
+      "issue_description": "string",
+      "recommendation": "string"
+    }
+  ],
   "contamination_analysis": {
     "likely_pollution_sources": ["string"],
     "nutrient_loading_assessment": "string",

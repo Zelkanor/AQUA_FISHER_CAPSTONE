@@ -109,27 +109,12 @@ export const MOCK_ANALYSIS = {
         "Adequate for general recreational safety, but low-ORP zones may support pathogen survival.",
     },
   ],
-  ecological_assessment: {
-    trophic_state: "Eutrophic",
-    trophic_justification:
-      "Elevated turbidity, high nutrient indicators (ammonia, conductivity), and field-observed algal mats confirm eutrophic status consistent with decades of published research on Dal Lake.",
-    biodiversity_impact:
-      "The eutrophic state favors pollution-tolerant species over sensitive native fauna. Native Schizothorax fish populations are likely stressed.",
-    algal_bloom_risk: "High",
-  },
-  contamination_analysis: {
-    likely_pollution_sources: [
-      "Houseboat sewage discharge",
-      "Agricultural runoff from catchment",
-      "Urban stormwater",
-      "Floating garden (Rad) nutrient leaching",
-      "Inadequate municipal sewage treatment",
-    ],
-    nutrient_loading_assessment:
-      "Nutrient loading is significant and consistent with chronic eutrophication patterns documented by LAWDA and CSIR-IITR studies.",
-    organic_pollution_indicators:
-      "Ammonia levels and ORP readings in the lower range confirm active organic decomposition in parts of the lake.",
-  },
+  ecological_assessment: { trophic_state: "Eutrophic", trophic_justification: "Elevated turbidity, high nutrient indicators (ammonia, conductivity), and field-observed algal mats confirm eutrophic status consistent with decades of published research on Dal Lake.", biodiversity_impact: "The eutrophic state favors pollution-tolerant species over sensitive native fauna. Native Schizothorax fish populations are likely stressed.", algal_bloom_risk: "High" },
+  spatial_heatmap: [
+    { latitude: 34.0845, longitude: 74.8621, parameter: "Ammonia", value: 0.791, unit: "mg/L", status: "Critical", issue_description: "Very high ammonia near houseboat cluster indicating sewage discharge.", recommendation: "Inspect houseboat holding tanks in this cluster immediately." },
+    { latitude: 34.0812, longitude: 74.8580, parameter: "Turbidity", value: 32.47, unit: "NTU", status: "Caution", issue_description: "Elevated turbidity near eastern shore likely from agricultural runoff.", recommendation: "Install sediment traps and check inflow stream for excessive silt." }
+  ],
+  contamination_analysis: { likely_pollution_sources: ["Houseboat sewage discharge", "Agricultural runoff from catchment", "Urban stormwater", "Floating garden (Rad) nutrient leaching", "Inadequate municipal sewage treatment"], nutrient_loading_assessment: "Nutrient loading is significant and consistent with chronic eutrophication patterns documented by LAWDA and CSIR-IITR studies.", organic_pollution_indicators: "Ammonia levels and ORP readings in the lower range confirm active organic decomposition in parts of the lake." },
   recommendations: {
     immediate_actions: [
       "Deploy floating aerators in low-DO zones near southern shore",

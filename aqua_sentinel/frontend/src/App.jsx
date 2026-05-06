@@ -7,6 +7,7 @@ import GlassCard from "./components/GlassCard";
 import ScoreRing from "./components/ScoreRing";
 import WaterLoader from "./components/WaterLoader";
 import SensorChip from "./components/SensorChip";
+import LakeHeatmap from "./components/LakeHeatmap";
 
 // ─── MAIN APP ───
 export default function AquaSentinel() {
@@ -399,40 +400,10 @@ export default function AquaSentinel() {
               ))}
             </div>
 
-            {/* Heatmap Placeholder */}
+            {/* Spatial Heatmap */}
             <p style={{ fontSize: 11, letterSpacing: 4, textTransform: "uppercase", color: ACCENT, margin: "32px 0 12px" }}>Spatial Heatmap</p>
-            <GlassCard hover={false} style={{
-              padding: 0, overflow: "hidden", minHeight: 400,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              background: `linear-gradient(135deg, rgba(0,229,255,0.02), rgba(0,191,165,0.02))`,
-              position: "relative",
-            }}>
-              {/* Decorative grid lines */}
-              <svg width="100%" height="400" style={{ position: "absolute", inset: 0, opacity: 0.06 }}>
-                {Array.from({ length: 20 }, (_, i) => (
-                  <line key={`h${i}`} x1="0" y1={i * 20} x2="100%" y2={i * 20} stroke={ACCENT} strokeWidth="0.5" />
-                ))}
-                {Array.from({ length: 40 }, (_, i) => (
-                  <line key={`v${i}`} x1={i * 30} y1="0" x2={i * 30} y2="400" stroke={ACCENT} strokeWidth="0.5" />
-                ))}
-              </svg>
-
-              <div style={{ textAlign: "center", zIndex: 1 }}>
-                <div style={{
-                  width: 72, height: 72, borderRadius: 18, margin: "0 auto 20px",
-                  background: `linear-gradient(135deg, ${ACCENT}10, ${ACCENT2}10)`, border: `1px dashed ${ACCENT}30`,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                }}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="1.5" strokeLinecap="round" opacity="0.6">
-                    <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" />
-                    <rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" />
-                  </svg>
-                </div>
-                <p style={{ fontSize: 16, fontWeight: 400, margin: "0 0 6px", color: TEXT_SECONDARY }}>Heatmap integration coming soon</p>
-                <p style={{ fontSize: 12, color: TEXT_MUTED, margin: 0, maxWidth: 400 }}>
-                  Spatial parameter distribution across GPS coordinates will render here
-                </p>
-              </div>
+            <GlassCard hover={false} style={{ padding: 0, overflow: "hidden", minHeight: 400, position: "relative" }}>
+              <LakeHeatmap analysis={analysis} />
             </GlassCard>
 
             {/* Confidence Notes */}
